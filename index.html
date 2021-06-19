@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Parallax Scrolling Website</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Logo</a>
+        <ul>
+            <li><a href="#" class="active">Trang Chủ</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Work</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="./imge/stars.png" id="stars">
+        <img src="./imge/moon.png" id="moon">
+        <img src="./imge/mountains_behind.png" id="mountains_behind">
+        <h2 id="text">Moon Light</h2>
+        <a href="#sec" id="btn">Explore</a>
+        <img src="./imge/mountains_front.png" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis aut rem repellendus! Similique nostrum
+        quasi provident suscipit, doloribus nobis, quaerat id possimus iusto, mollitia quidem unde
+        maxime animi vel aliquid. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Neque, repudiandae?
+        Praesentium voluptas inventore aspernatur quae debitis quam doloribus minima autem dolor temporibus facere
+        ipsa hic distinctio vel, dolorum, vitae a! Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos ratione
+        qui numquam maxime, aliquid cupiditate sequi odit ipsam quos error labore in harum asperiores dignissimos 
+        consequuntur quidem reiciendis. Voluptate, fugiat.<br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+        Earum, facilis ducimus repellat ab quisquam, eaque placeat quae alias fuga repellendus vero optio labore quasi culpa! 
+        Ex, dolor. Illum, cupiditate ipsam!
+    <br><br>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure commodi quia ipsum tenetur animi! Vel dicta 
+    provident consequatur nam. In reiciendis labore laboriosam voluptatum quod ipsa nesciunt, harum officia mollitia?
+    <br><br> Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
+    Ipsum, tempore quia illo eveniet voluptatem libero minus quis corporis 
+    excepturi nostrum maiores dolorem, dicta quam natus laboriosam corrupti. Eum, 
+    modi vitae!</p>
+    </div>
+
+    <script>
+        let stars= document.getElementById('stars');
+        let moon=document.getElementById('moon');
+        let mountains_behind=document.getElementById('mountains_behind')
+        let text= document.getElementById('text');
+        let btn = document.getElementById('btn')
+        let mountains_front= document.getElementById('mountains_front');
+        let header=document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value=window.scrollY;
+            stars.style.left= value * 0.25 +'px';
+            moon.style.top= value * 1.05+'px';
+            mountains_behind.style.top=value * 0.5 +'px';
+            mountains_front.style.top= value * 0 +'px';
+            text.style.marginRight= value * 4+'px';
+            text.style.marginTop= value * 1.5 +'px';
+            btn.style.marginTop= value * 1.5 +'px';
+            header.style.top= value * 0.5 +'px';
+        })
+    </script>
+</body>
+</html>
